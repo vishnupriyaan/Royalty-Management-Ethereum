@@ -1,0 +1,23 @@
+<div class="wrapper container-fluid">
+    <div class="body">
+        <div class="logo">
+            <img src="../../../assets/logo.png" />
+        </div>
+        <div class="form">
+            <h2>Login</h2>
+            <div class="input">
+                <div class="inputBox">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" [(ngModel)]="username" id="username" required/>
+                </div>
+                <div class="inputBox">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" [(ngModel)]="password" id="password" required/>
+                </div>
+                <div class="inputBox">
+                    <button type="submit" name="submit" (click)="login()" [disabled]="formValidate()" [style.cursor]="formValidate() ? 'not-allowed' : 'pointer'">LOGIN</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

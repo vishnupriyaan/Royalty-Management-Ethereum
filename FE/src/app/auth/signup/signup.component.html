@@ -1,0 +1,51 @@
+<div class="wrapper container-fluid">
+    <div class="body">
+        <div class="logo">
+            <img src="../../../assets/logo.png" />
+        </div>
+        <div class="form">
+            <h2>Create a new Account</h2>
+            <div class="input">
+                <div class="inputBox">
+                    <label for="firstname">First Name</label>
+                    <input type="text" name="firstname" [(ngModel)]="firstname" id="firstname" required />
+                </div>
+                <div class="inputBox">
+                    <label for="lastname">Last Name</label>
+                    <input type="password" name="lastname" [(ngModel)]="lastname" id="lastname" required />
+                </div>
+            </div>
+            <div class="input">
+                <div class="inputBox">
+                    <label for="email">E-mail ID</label>
+                    <input type="email" name="email" [(ngModel)]="email" id="email" required />
+                </div>
+                <div class="inputBox">
+                    <label for="mobile">Phone Number</label>
+                    <input type="text" name="mobile" [(ngModel)]="mobile" id="mobile" required />
+                </div>
+            </div>
+            <div class="input">
+                <div class="inputBox">
+                    <label for="password">Password</label>
+                    <input type="password" name="password" [(ngModel)]="password" id="password" required />
+                </div>
+                <div class="inputBox">
+                    <label for="confpassword">Confirm Password</label>
+                    <input type="text" name="confpassword" [(ngModel)]="confpassword" id="confpassword" required />
+                </div>
+            </div>
+            <div class="input">
+                <div class="inputBox">
+                    <label for="userType">User</label>
+                    <select [(ngModel)]="userType" name="userType">
+                        <option *ngFor="let item of userTypeList" [attr.value]=item>{{item}}</option>
+                    </select>
+                </div>
+            </div>
+            <div class="input">
+                <button type="submit" name="submit" (click)="signup()" [disabled]="formValidate()" [style.cursor]="formValidate() ? 'not-allowed' : 'pointer'">SIGN UP</button>
+            </div>
+        </div>
+    </div>
+</div>
